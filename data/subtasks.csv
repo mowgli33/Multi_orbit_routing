@@ -1,98 +1,98 @@
-,1,2
-0,"(<__main__.Node object at 0x75bcb0dbce30>, 0)","(<__main__.Node object at 0x75bcb0dbcdd0>, 0)"
-1,"(<__main__.Node object at 0x75bcd4d469c0>, 900.0)","(<__main__.Node object at 0x75bcb0dbcce0>, 1800.0)"
-2,"(<__main__.Node object at 0x75bcb0dbf0e0>, 1800.0)","(<__main__.Node object at 0x75bcb0dbce00>, 3600.0)"
-3,"(<__main__.Node object at 0x75bcb0dbeea0>, 2700.0)","(<__main__.Node object at 0x75bcb0dbc350>, 5400.0)"
-4,"(<__main__.Node object at 0x75bcb0dbe990>, 3600.0)","(<__main__.Node object at 0x75bcb0dbd280>, 7200.0)"
-5,"(<__main__.Node object at 0x75bcb0dbd700>, 4500.0)","(<__main__.Node object at 0x75bcb0dbcd70>, 9000.0)"
-6,"(<__main__.Node object at 0x75bcb0dbce30>, 5400.0)","(<__main__.Node object at 0x75bcb0dbc0e0>, 10800.0)"
-7,"(<__main__.Node object at 0x75bcd4d469c0>, 6300.0)","(<__main__.Node object at 0x75bcb0dbd1f0>, 12600.0)"
-8,"(<__main__.Node object at 0x75bcb0dbf0e0>, 7200.0)","(<__main__.Node object at 0x75bcb0dbd2b0>, 14400.0)"
-9,"(<__main__.Node object at 0x75bcb0dbeea0>, 8100.0)","(<__main__.Node object at 0x75bcb0dbc740>, 16200.0)"
-10,"(<__main__.Node object at 0x75bcb0dbe990>, 9000.0)","(<__main__.Node object at 0x75bcb0dbd670>, 18000.0)"
-11,"(<__main__.Node object at 0x75bcb0dbd700>, 9900.0)","(<__main__.Node object at 0x75bcb0dbd400>, 19800.0)"
-12,"(<__main__.Node object at 0x75bcb0dbce30>, 10800.0)","(<__main__.Node object at 0x75bcb0dbd520>, 21600.0)"
-13,"(<__main__.Node object at 0x75bcd4d469c0>, 11700.0)","(<__main__.Node object at 0x75bcb0dbd580>, 23400.0)"
-14,"(<__main__.Node object at 0x75bcb0dbf0e0>, 12600.0)","(<__main__.Node object at 0x75bcb0dbd6a0>, 25200.0)"
-15,"(<__main__.Node object at 0x75bcb0dbeea0>, 13500.0)","(<__main__.Node object at 0x75bcb0dbd9d0>, 27000.0)"
-16,"(<__main__.Node object at 0x75bcb0dbe990>, 14400.0)","(<__main__.Node object at 0x75bcb0dbda60>, 28800.0)"
-17,"(<__main__.Node object at 0x75bcb0dbd700>, 15300.0)","(<__main__.Node object at 0x75bcb0dbdac0>, 30600.0)"
-18,"(<__main__.Node object at 0x75bcb0dbce30>, 16200.0)","(<__main__.Node object at 0x75bcb0dbdb20>, 32400.0)"
-19,"(<__main__.Node object at 0x75bcd4d469c0>, 17100.0)","(<__main__.Node object at 0x75bcb0dbdb80>, 34200.0)"
-20,"(<__main__.Node object at 0x75bcb0dbf0e0>, 18000.0)","(<__main__.Node object at 0x75bcb0dbce60>, 36000.0)"
-21,"(<__main__.Node object at 0x75bcb0dbeea0>, 18900.0)","(<__main__.Node object at 0x75bcb0dbd040>, 37800.0)"
-22,"(<__main__.Node object at 0x75bcb0dbe990>, 19800.0)","(<__main__.Node object at 0x75bcb0dbfaa0>, 39600.0)"
-23,"(<__main__.Node object at 0x75bcb0dbd700>, 20700.0)","(<__main__.Node object at 0x75bcb0dbfef0>, 41400.0)"
-24,"(<__main__.Node object at 0x75bcb0dbce30>, 21600.0)","(<__main__.Node object at 0x75bcb0dbcdd0>, 43200.0)"
-25,"(<__main__.Node object at 0x75bcd4d469c0>, 22500.0)","(<__main__.Node object at 0x75bcb0dbcce0>, 45000.0)"
-26,"(<__main__.Node object at 0x75bcb0dbf0e0>, 23400.0)","(<__main__.Node object at 0x75bcb0dbce00>, 46800.0)"
-27,"(<__main__.Node object at 0x75bcb0dbeea0>, 24300.0)","(<__main__.Node object at 0x75bcb0dbc350>, 48600.0)"
-28,"(<__main__.Node object at 0x75bcb0dbe990>, 25200.0)","(<__main__.Node object at 0x75bcb0dbd280>, 50400.0)"
-29,"(<__main__.Node object at 0x75bcb0dbd700>, 26100.0)","(<__main__.Node object at 0x75bcb0dbcd70>, 52200.0)"
-30,"(<__main__.Node object at 0x75bcb0dbce30>, 27000.0)","(<__main__.Node object at 0x75bcb0dbc0e0>, 54000.0)"
-31,"(<__main__.Node object at 0x75bcd4d469c0>, 27900.0)","(<__main__.Node object at 0x75bcb0dbd1f0>, 55800.0)"
-32,"(<__main__.Node object at 0x75bcb0dbf0e0>, 28800.0)","(<__main__.Node object at 0x75bcb0dbd2b0>, 57600.0)"
-33,"(<__main__.Node object at 0x75bcb0dbeea0>, 29700.0)","(<__main__.Node object at 0x75bcb0dbc740>, 59400.0)"
-34,"(<__main__.Node object at 0x75bcb0dbe990>, 30600.0)","(<__main__.Node object at 0x75bcb0dbd670>, 61200.0)"
-35,"(<__main__.Node object at 0x75bcb0dbd700>, 31500.0)","(<__main__.Node object at 0x75bcb0dbd400>, 63000.0)"
-36,"(<__main__.Node object at 0x75bcb0dbce30>, 32400.0)","(<__main__.Node object at 0x75bcb0dbd520>, 64800.0)"
-37,"(<__main__.Node object at 0x75bcd4d469c0>, 33300.0)","(<__main__.Node object at 0x75bcb0dbd580>, 66600.0)"
-38,"(<__main__.Node object at 0x75bcb0dbf0e0>, 34200.0)","(<__main__.Node object at 0x75bcb0dbd6a0>, 68400.0)"
-39,"(<__main__.Node object at 0x75bcb0dbeea0>, 35100.0)","(<__main__.Node object at 0x75bcb0dbd9d0>, 70200.0)"
-40,"(<__main__.Node object at 0x75bcb0dbe990>, 36000.0)","(<__main__.Node object at 0x75bcb0dbda60>, 72000.0)"
-41,"(<__main__.Node object at 0x75bcb0dbd700>, 36900.0)","(<__main__.Node object at 0x75bcb0dbdac0>, 73800.0)"
-42,"(<__main__.Node object at 0x75bcb0dbce30>, 37800.0)","(<__main__.Node object at 0x75bcb0dbdb20>, 75600.0)"
-43,"(<__main__.Node object at 0x75bcd4d469c0>, 38700.0)","(<__main__.Node object at 0x75bcb0dbdb80>, 77400.0)"
-44,"(<__main__.Node object at 0x75bcb0dbf0e0>, 39600.0)","(<__main__.Node object at 0x75bcb0dbce60>, 79200.0)"
-45,"(<__main__.Node object at 0x75bcb0dbeea0>, 40500.0)","(<__main__.Node object at 0x75bcb0dbd040>, 81000.0)"
-46,"(<__main__.Node object at 0x75bcb0dbe990>, 41400.0)","(<__main__.Node object at 0x75bcb0dbfaa0>, 82800.0)"
-47,"(<__main__.Node object at 0x75bcb0dbd700>, 42300.0)","(<__main__.Node object at 0x75bcb0dbfef0>, 84600.0)"
-48,"(<__main__.Node object at 0x75bcb0dbce30>, 43200.0)","(<__main__.Node object at 0x75bcb0dbcdd0>, 86400.0)"
-49,"(<__main__.Node object at 0x75bcd4d469c0>, 44100.0)",
-50,"(<__main__.Node object at 0x75bcb0dbf0e0>, 45000.0)",
-51,"(<__main__.Node object at 0x75bcb0dbeea0>, 45900.0)",
-52,"(<__main__.Node object at 0x75bcb0dbe990>, 46800.0)",
-53,"(<__main__.Node object at 0x75bcb0dbd700>, 47700.0)",
-54,"(<__main__.Node object at 0x75bcb0dbce30>, 48600.0)",
-55,"(<__main__.Node object at 0x75bcd4d469c0>, 49500.0)",
-56,"(<__main__.Node object at 0x75bcb0dbf0e0>, 50400.0)",
-57,"(<__main__.Node object at 0x75bcb0dbeea0>, 51300.0)",
-58,"(<__main__.Node object at 0x75bcb0dbe990>, 52200.0)",
-59,"(<__main__.Node object at 0x75bcb0dbd700>, 53100.0)",
-60,"(<__main__.Node object at 0x75bcb0dbce30>, 54000.0)",
-61,"(<__main__.Node object at 0x75bcd4d469c0>, 54900.0)",
-62,"(<__main__.Node object at 0x75bcb0dbf0e0>, 55800.0)",
-63,"(<__main__.Node object at 0x75bcb0dbeea0>, 56700.0)",
-64,"(<__main__.Node object at 0x75bcb0dbe990>, 57600.0)",
-65,"(<__main__.Node object at 0x75bcb0dbd700>, 58500.0)",
-66,"(<__main__.Node object at 0x75bcb0dbce30>, 59400.0)",
-67,"(<__main__.Node object at 0x75bcd4d469c0>, 60300.0)",
-68,"(<__main__.Node object at 0x75bcb0dbf0e0>, 61200.0)",
-69,"(<__main__.Node object at 0x75bcb0dbeea0>, 62100.0)",
-70,"(<__main__.Node object at 0x75bcb0dbe990>, 63000.0)",
-71,"(<__main__.Node object at 0x75bcb0dbd700>, 63900.0)",
-72,"(<__main__.Node object at 0x75bcb0dbce30>, 64800.0)",
-73,"(<__main__.Node object at 0x75bcd4d469c0>, 65700.0)",
-74,"(<__main__.Node object at 0x75bcb0dbf0e0>, 66600.0)",
-75,"(<__main__.Node object at 0x75bcb0dbeea0>, 67500.0)",
-76,"(<__main__.Node object at 0x75bcb0dbe990>, 68400.0)",
-77,"(<__main__.Node object at 0x75bcb0dbd700>, 69300.0)",
-78,"(<__main__.Node object at 0x75bcb0dbce30>, 70200.0)",
-79,"(<__main__.Node object at 0x75bcd4d469c0>, 71100.0)",
-80,"(<__main__.Node object at 0x75bcb0dbf0e0>, 72000.0)",
-81,"(<__main__.Node object at 0x75bcb0dbeea0>, 72900.0)",
-82,"(<__main__.Node object at 0x75bcb0dbe990>, 73800.0)",
-83,"(<__main__.Node object at 0x75bcb0dbd700>, 74700.0)",
-84,"(<__main__.Node object at 0x75bcb0dbce30>, 75600.0)",
-85,"(<__main__.Node object at 0x75bcd4d469c0>, 76500.0)",
-86,"(<__main__.Node object at 0x75bcb0dbf0e0>, 77400.0)",
-87,"(<__main__.Node object at 0x75bcb0dbeea0>, 78300.0)",
-88,"(<__main__.Node object at 0x75bcb0dbe990>, 79200.0)",
-89,"(<__main__.Node object at 0x75bcb0dbd700>, 80100.0)",
-90,"(<__main__.Node object at 0x75bcb0dbce30>, 81000.0)",
-91,"(<__main__.Node object at 0x75bcd4d469c0>, 81900.0)",
-92,"(<__main__.Node object at 0x75bcb0dbf0e0>, 82800.0)",
-93,"(<__main__.Node object at 0x75bcb0dbeea0>, 83700.0)",
-94,"(<__main__.Node object at 0x75bcb0dbe990>, 84600.0)",
-95,"(<__main__.Node object at 0x75bcb0dbd700>, 85500.0)",
-96,"(<__main__.Node object at 0x75bcb0dbce30>, 86400.0)",
+1,2
+[0 0],[10  0]
+[  1. 900.],[  11. 1800.]
+[   2. 1800.],[  12. 3600.]
+[   3. 2700.],[  13. 5400.]
+[   4. 3600.],[  14. 7200.]
+[   5. 4500.],[  15. 9000.]
+[   0. 5400.],[   16. 10800.]
+[1.0e+00 6.3e+03],[   17. 12600.]
+[2.0e+00 7.2e+03],[   18. 14400.]
+[3.0e+00 8.1e+03],[   19. 16200.]
+[4.e+00 9.e+03],[   20. 18000.]
+[5.0e+00 9.9e+03],[   21. 19800.]
+[    0. 10800.],[   22. 21600.]
+[1.00e+00 1.17e+04],[2.30e+01 2.34e+04]
+[2.00e+00 1.26e+04],[2.40e+01 2.52e+04]
+[3.00e+00 1.35e+04],[2.5e+01 2.7e+04]
+[4.00e+00 1.44e+04],[2.60e+01 2.88e+04]
+[5.00e+00 1.53e+04],[2.70e+01 3.06e+04]
+[    0. 16200.],[2.80e+01 3.24e+04]
+[1.00e+00 1.71e+04],[2.90e+01 3.42e+04]
+[2.0e+00 1.8e+04],[6.0e+00 3.6e+04]
+[3.00e+00 1.89e+04],[7.00e+00 3.78e+04]
+[4.00e+00 1.98e+04],[8.00e+00 3.96e+04]
+[5.00e+00 2.07e+04],[9.00e+00 4.14e+04]
+[    0. 21600.],[1.00e+01 4.32e+04]
+[1.00e+00 2.25e+04],[1.1e+01 4.5e+04]
+[2.00e+00 2.34e+04],[1.20e+01 4.68e+04]
+[3.00e+00 2.43e+04],[1.30e+01 4.86e+04]
+[4.00e+00 2.52e+04],[1.40e+01 5.04e+04]
+[5.00e+00 2.61e+04],[1.50e+01 5.22e+04]
+[    0. 27000.],[1.6e+01 5.4e+04]
+[1.00e+00 2.79e+04],[1.70e+01 5.58e+04]
+[2.00e+00 2.88e+04],[1.80e+01 5.76e+04]
+[3.00e+00 2.97e+04],[1.90e+01 5.94e+04]
+[4.00e+00 3.06e+04],[2.00e+01 6.12e+04]
+[5.00e+00 3.15e+04],[2.1e+01 6.3e+04]
+[    0. 32400.],[2.20e+01 6.48e+04]
+[1.00e+00 3.33e+04],[2.30e+01 6.66e+04]
+[2.00e+00 3.42e+04],[2.40e+01 6.84e+04]
+[3.00e+00 3.51e+04],[2.50e+01 7.02e+04]
+[4.0e+00 3.6e+04],[2.6e+01 7.2e+04]
+[5.00e+00 3.69e+04],[2.70e+01 7.38e+04]
+[    0. 37800.],[2.80e+01 7.56e+04]
+[1.00e+00 3.87e+04],[2.90e+01 7.74e+04]
+[2.00e+00 3.96e+04],[6.00e+00 7.92e+04]
+[3.00e+00 4.05e+04],[7.0e+00 8.1e+04]
+[4.00e+00 4.14e+04],[8.00e+00 8.28e+04]
+[5.00e+00 4.23e+04],[9.00e+00 8.46e+04]
+[    0. 43200.],[1.00e+01 8.64e+04]
+[1.00e+00 4.41e+04],
+[2.0e+00 4.5e+04],
+[3.00e+00 4.59e+04],
+[4.00e+00 4.68e+04],
+[5.00e+00 4.77e+04],
+[    0. 48600.],
+[1.00e+00 4.95e+04],
+[2.00e+00 5.04e+04],
+[3.00e+00 5.13e+04],
+[4.00e+00 5.22e+04],
+[5.00e+00 5.31e+04],
+[    0. 54000.],
+[1.00e+00 5.49e+04],
+[2.00e+00 5.58e+04],
+[3.00e+00 5.67e+04],
+[4.00e+00 5.76e+04],
+[5.00e+00 5.85e+04],
+[    0. 59400.],
+[1.00e+00 6.03e+04],
+[2.00e+00 6.12e+04],
+[3.00e+00 6.21e+04],
+[4.0e+00 6.3e+04],
+[5.00e+00 6.39e+04],
+[    0. 64800.],
+[1.00e+00 6.57e+04],
+[2.00e+00 6.66e+04],
+[3.00e+00 6.75e+04],
+[4.00e+00 6.84e+04],
+[5.00e+00 6.93e+04],
+[    0. 70200.],
+[1.00e+00 7.11e+04],
+[2.0e+00 7.2e+04],
+[3.00e+00 7.29e+04],
+[4.00e+00 7.38e+04],
+[5.00e+00 7.47e+04],
+[    0. 75600.],
+[1.00e+00 7.65e+04],
+[2.00e+00 7.74e+04],
+[3.00e+00 7.83e+04],
+[4.00e+00 7.92e+04],
+[5.00e+00 8.01e+04],
+[    0. 81000.],
+[1.00e+00 8.19e+04],
+[2.00e+00 8.28e+04],
+[3.00e+00 8.37e+04],
+[4.00e+00 8.46e+04],
+[5.00e+00 8.55e+04],
+[    0. 86400.],

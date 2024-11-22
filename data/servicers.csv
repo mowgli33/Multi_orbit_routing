@@ -1,2 +1,2 @@
-,id,starting_node,starting_arc,fuel_capacity
-0,1,Node 0,"(Node 0,Node 1,Orbital_maneuver)",100
+id,starting_node,starting_arc,fuel_capacity
+1,Node 0,"(Node 0,Node 1,Orbital_maneuver)",100
