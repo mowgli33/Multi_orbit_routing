@@ -1,0 +1,29 @@
+In other cases, for CentraleSupélec students, we recommend using the CentraleSupélec Data Centre d'Enseignement (DCE) : https://dce.pages.centralesupelec.fr/01_cluster_overview/
+
+
+Objectif : résoudre un modèle stochastique.
+s'inspirer de stochastic modeling approach, page 5 - page 8 : modélisation du problème
+
+mon objectif : proposer un modele +/- fini pour les vacances de noël
+modele actuel : déterministe
+-> modéliser l'incertitude sur la demande (= incertitude sur la position des tâches - à réfléchir, s'inspirer); modèle mathématique
+
+Pour la prochaine réu, comprendre le code, commencer à s'approprier l'article, avoir des idées de où intégrer l'incertitude
+essayer de faire fonctionner un des solver sur mon ordi (license CPLEX)
+
+_____________________
+
+on estime qu'on connait parfaitement les tâches
+
+incertitudes sur les tâches : sur les subtasks, position de la tache au cours du temps
+
+puis, plusieurs types de tâches, plusieurs durées, ex : maintenance/inspection
+
+A faire :
+
+Compléter le code,  en s'inspirant de la nouvelle version
+Lire et se renseigner sur la modélisation sous incertitude d'un problème d'optim
+
+
+Feedback ESA : 
+ajouter des types de manoeuvres sur la création d'arcs

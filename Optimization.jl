@@ -1,93 +1,103 @@
-#On cherche à optimiser le problème créé précédemment dans Toymodel
+using JuMP, CPLEX, CSV, DataFrames
+include("function.jl")
 
+# CSV repertory to import the data from the python code 
+name_of_case_study = "Toymodel"
 
-#On charge les données csv
+input_directory = "output"  # * name_of_case_study
+output_directory = "./results/" * name_of_case_study
 
-using CSV
-using DataFrames
-using JSON3
-
-
-# nodes = CSV.read("./data/nodes.csv", DataFrame)
-# arcs = CSV.read("./data/arcs.csv", DataFrame)
-# tasks = CSV.read("./data/tasks.csv", DataFrame)
-# subtasks = CSV.read("./data/subtasks.csv", DataFrame)
-# servicers = CSV.read("./data/servicers.csv", DataFrame)
-# times = CSV.read("./data/times.csv", DataFrame)
-
-files = readdir("./data")
-df = Dict()
-for val in files
-    df[val[1:end-4]] = CSV.read("./data/$val",DataFrame)
+N, B, B_v, A, D, T, T_dict, A_Rt, f_dij = import_data(input_directory)
+# Check if the data is good
+println("N: ", N)
+println("B: ", B)
+println("B_v: ", B_v)
+for print in keys(A)
+    println(print," : ", A[print])
 end
+println("D: ", D)
+println("T: ", T)
+println("T_dict: ", T_dict)
 
-subtasks = df["subtasks"]
-println(first(subtasks,5))
+function create_and_solve_model(B, B_v, D, A, N, T, T_dict, A_Rt, f_dij)
 
+    # --- Model --- #
+    model = Model(CPLEX.Optimizer)
 
-#Création du modèle
+    # --- Decision variable --- #
+    @variable(model, beta_vk[keys(B), keys(B_v["v1"])], Bin)
+    @variable(model, 0 <= f_dt[keys(D), T] <= D["d1"]["F_d"])
+    @variable(model, y_dijt[keys(A), T], Bin)
+    
+    # @variable(model, x_PM[keys(B), T], Bin)
+    # @variable(model, x_CM[keys(B), T], Bin)
+    # @variable(model, f[keys(B), T], Bin)
 
-using JuMP
-using GLPK
+    #---------------- Constraints ----------------#
+    
+    #----- c1 -----#
+    @constraint(model, c1[v in keys(B)], 
+        sum(beta_vk[v, :]) 
+        <= 
+        1
+    )
 
+    #----- c2 -----#
+    @constraint(model, c2[v in keys(B), k in keys(B_v[v])], 
+        sum(y_dijt[ij, B_v[v][k][2] - A[ij][1]] for ij in keys(A) if split(ij, " => ")[2] == B_v[v][k][1] && B_v[v][k][2] - A[ij][1] >= 0) 
+        >= 
+        beta_vk[v, k]
+    )
 
-# Création du modèle
-model = Model(GLPK.Optimizer)
+    #----- c3 -----#
+    @constraint(model, c3[i in keys(N), d in keys(D), t in keys(T_dict)],
+        sum(y_dijt[ji, T_dict[t] - A[ji][1]] for ji in keys(A) if split(ji, " => ")[2] == i && T_dict[t] - A[ji][1] >= 0)
+        -
+        sum(y_dijt[ij, T_dict[t]] for ij in keys(A) if split(ij, " => ")[1] == i)
+        ==
+        if i == D["d1"]["s_d"] && T_dict[t] == first(T)
+            -1
+        elseif i == "E" && T_dict[t] == last(T)
+            1
+        else
+            0
+        end
+    )
 
-# Extraction des indices (tâche, sous-tâche) valides
-ind_subtasks = [(k, v) for k in 1:size(subtasks, 2), v in 1:size(subtasks, 1) if !ismissing(subtasks[v, k])]    #On prend en compte que certaines valeurs du dataframe sont des NaN
+    #----- c4 -----#
+    @constraint(model, c4[t in T[2:end], d in keys(D)],
+        f_dt[d, t]
+        ==
+        f_dt[d, t-1]
+        -
+        (
+        sum(
+            sum(
+                y_dijt[ij, time] * A[ij][3]
+                for time in max(t - A[ij][1], 0):t-1
+            )
+            for ij in keys(A)
+        )
+        -
+        sum(
+            y_dijt[ij, t - A[ij][1]] * f_dij[d][ij] for ij in A_Rt[t-1] if t - A[ij][1] >= 0
+        )
+        )
+    )
 
-# Définition des variables binaires pour chaque sous-tâche
-@variable(
-    model, 
-    beta[ind_subtasks], 
-    Bin)
+    #----- c5 -----#
+    @constraint(model, c5[d in keys(D)], f_dt[d, T[1]] == D[d]["F_d"])
 
-# Définition des variables de fuel capacity
-@variable(
-    model, 
-    f[1:size(df["servicers"],1),1:size(df["times"],1)]>=0)
+    #-------------- objective function --------------#
+    @objective(model, Max, sum(B[v] * sum(beta_vk[v, k] for k in keys(B_v[v])) for v in keys(B)))
 
-# Extraction des indices servicer, arc, time
-D = df["servicers"].id
-A = collect(zip(df["arcs"].start_node, df["arcs"].end_node)) # Paires (i, j) des arcs
-T = df["times"].t
+    set_optimizer_attribute(model, "CPX_PARAM_TILIM", 43200.0)
 
-@variable(
-    model, 
-    y[d in D, (i, j) in A, t in T], 
-    Bin)
+    optimize!(model)
+    println(solution_summary(model))
 
+    return model, value.(beta_vk), value.(f_dt), value.(y_dijt)     #, value.(x_PM), value.(x_CM), value.(f)
 
-# Définition des contraintes
+    end
 
-@constraint(
-    model,
-    [v in df["tasks"].id],
-    sum(beta[(v, k)] for (v2, k) in ind_subtasks if v2 == v) <= 1
-)
-
-
-
-# @constraint(
-#     model,
-#     [(v,k) in ind_subtasks],
-#     sum(
-#         sum(
-#             y[d,(i,n),t-tho] for (i,n,tho) in zip(df["arcs"].start_node,df["arcs"].end_node,df["arcs"].tho) if n == JSON3.read(String(df["subtasks"][k,v]))[1] && 900 - tho >=0
-#             ) for d in df["servicers"].id
-#     ) >= beta[(v,k)]
-# )
-
-@constraint(
-    model,
-    [(v,k) in ind_subtasks],
-    sum(
-        y[1,(i,n),JSON3.read(String(df["subtasks"][k,v]))[2]-tho] for (i,n,tho,type) in zip(df["arcs"].start_node[1:3],df["arcs"].end_node[1:3],df["arcs"].tho[1:3],df["arcs".type[1:3]]) if n == JSON3.read(String(df["subtasks"][k,v]))[1] && JSON3.read(String(df["subtasks"][k,v]))[2] - tho >=0
-        ) >= beta[(v,k)]
-)
-
-###On remplace pour l'instant subtasks.duration par le pas de temps de notre simulation 900
-
-
-
+model, beta_vk_values, f_dt_values, y_dijt_values = create_and_solve_model(B, B_v, D, A, N, T, T_dict, A_Rt, f_dij)     #, x_PM_values, x_CM_values, f_values
