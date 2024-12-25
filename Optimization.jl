@@ -78,10 +78,10 @@ function create_and_solve_model(B, B_v, D, A, N, T, T_dict, A_Rt, f_dij)
             )
             for ij in keys(A)
         )
-        -
-        sum(
-            y_dijt[ij, t - A[ij][1]] * f_dij[d][ij] for ij in A_Rt[t-1] if t - A[ij][1] >= 0
-        )
+        # -
+        # sum(
+        #     y_dijt[ij, t - A[ij][1]] * f_dij[d][ij] for ij in A_Rt[t-1] if t - A[ij][1] >= 0
+        # )
         )
     )
 
@@ -101,3 +101,37 @@ function create_and_solve_model(B, B_v, D, A, N, T, T_dict, A_Rt, f_dij)
     end
 
 model, beta_vk_values, f_dt_values, y_dijt_values = create_and_solve_model(B, B_v, D, A, N, T, T_dict, A_Rt, f_dij)     #, x_PM_values, x_CM_values, f_values
+
+print_all_manoeuvres(y_dijt_values, f_dt_values, beta_vk_values, A, T, D)
+
+function save_results(output_directory::String, beta_vk_values, f_dt_values, model, B, B_v, D, T, A)    # y_dijt_values, x_PM_values, x_CM_values, f_values,
+    # Créer le répertoire s'il n'existe pas encore
+    if !isdir(output_directory)
+        mkpath(output_directory)
+    end
+
+    # Convertir les résultats en DataFrames
+    beta_vk_df = DataFrame([Dict(:v => v, :k => k, :value => beta_vk_values[v, k]) for v in keys(B) for k in keys(B_v["v1"])])
+    f_dt_df = DataFrame([Dict(:d => d, :t => t, :value => f_dt_values[d, t]) for d in keys(D) for t in T])
+    y_dijt_df = DataFrame([Dict(:ij => ij, :t => t, :value => y_dijt_values[ij, t]) for ij in keys(A) for t in T])
+    # x_PM_df = DataFrame([Dict(:v => v, :t => t, :value => x_PM_values[v, t]) for v in keys(B) for t in T])
+    # x_CM_df = DataFrame([Dict(:v => v, :t => t, :value => x_CM_values[v, t]) for v in keys(B) for t in T])
+    # f_df = DataFrame([Dict(:v => v, :t => t, :value => f_values[v, t]) for v in keys(B) for t in T])
+
+    # Sauvegarder les DataFrames en fichiers CSV
+    CSV.write(joinpath(output_directory, "beta_vk_values.csv"), beta_vk_df)
+    CSV.write(joinpath(output_directory, "f_dt_values.csv"), f_dt_df)
+    CSV.write(joinpath(output_directory, "y_dijt_values.csv"), y_dijt_df)
+    # CSV.write(joinpath(output_directory, "x_PM_values.csv"), x_PM_df)
+    # CSV.write(joinpath(output_directory, "x_CM_values.csv"), x_CM_df)
+    # CSV.write(joinpath(output_directory, "f_values.csv"), f_df)
+
+    # Enregistrer le résumé du modèle dans un fichier texte
+    open(joinpath(output_directory, "model_summary.txt"), "w") do file
+        summary_str = string(solution_summary(model))
+        write(file, summary_str)
+    end
+end
+
+
+save_results(output_directory, beta_vk_values, f_dt_values, model, B, B_v, D, T, A) #, y_dijt_values, x_PM_values, x_CM_values, f_values

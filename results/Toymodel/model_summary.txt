@@ -1,0 +1,21 @@
+* Solver : CPLEX
+
+* Status
+  Result count       : 1
+  Termination status : OPTIMAL
+  Message from the solver:
+  "integer optimal solution"
+
+* Candidate solution (result #1)
+  Primal status      : FEASIBLE_POINT
+  Dual status        : NO_SOLUTION
+  Objective value    : 2.00000e+00
+  Objective bound    : 2.00000e+00
+  Relative gap       : 0.00000e+00
+  Dual objective value : 2.00000e+00
+
+* Work counters
+  Solve time (sec)   : 5.22405e+00
+  Simplex iterations : 0
+  Barrier iterations : 0
+  Node count         : 0

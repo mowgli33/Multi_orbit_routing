@@ -27,7 +27,7 @@ function import_data(import_directory::String)
     A = Dict()
     for row in eachrow(arcs_df)
         from_to = "$(row["FromNode"]) => $(row["ToNode"])"
-        A[from_to] = (row["Tau"], row["Phi"])
+        A[from_to] = (row["Tau"], row["Phi"],row["Psi"])
     end
     
     D = Dict(row["RobotID"] => Dict("s_d" => row["StartingNode"], "F_d" => row["MaxFuel"]) for row in eachrow(robots_df))
@@ -57,4 +57,40 @@ function import_data(import_directory::String)
     # end
     
     return N, B, B_v, A, D, T, T_dict, A_Rt, f_dij
+end
+
+
+function print_all_manoeuvres(y_dijt_values, f_dt_values, beta_vk_values, A, T, D)
+    # Parcourir tous les temps disponibles dans T
+    for time in T
+        println("À t = $time :")
+        
+        
+        # Imprimer les manœuvres
+        println("  Manœuvres :")
+        for ij in keys(A)
+            from_node, to_node = split(ij, " => ")
+            if y_dijt_values[ij, time] == 1.0
+                println("    Manœuvre: $(from_node) => $(to_node)")
+            end
+        end
+        
+        # Imprimer les valeurs de f_dt
+        println("  Valeurs de f_dt :")
+        for d in keys(D)
+            println("    Robot $(d) : $(f_dt_values[d, time])")
+        end
+        
+        # Imprimer les valeurs de beta_vk où beta_vk = 1
+        println("  Valeurs de beta_vk :")
+        for v in keys(B_v)
+            for k in keys(B_v[v])
+                if beta_vk_values[v, k] == 1
+                    println("    Task $(v), Subtask $(k) : $(beta_vk_values[v, k])")
+                end
+            end
+        end
+        
+        println("\n")  # Ligne vide pour séparation entre les temps
+    end
 end
