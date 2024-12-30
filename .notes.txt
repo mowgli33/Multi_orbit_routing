@@ -1,3 +1,14 @@
+30/12/2024
+
+Objectif : modèle d'optimisation stochastique avec incertitude sur la demande. Cela signifie que les positions des satellites ne sont pas connues à l'avance, et que lorsqu'un satellite tombe en panne, il correspond à une nouvelle tâche qui débute.
+______________________
+
+25/12/2024
+
+Le problème jeu d'optimisation tourne, mais la solution ne semble pas respecter la contrainte 3. Nous devrions observer une valeur non nulle de ydijt pour chaque t, ce qui n'est actuellement pas le cas.
+
+_____________________
+
 In other cases, for CentraleSupélec students, we recommend using the CentraleSupélec Data Centre d'Enseignement (DCE) : https://dce.pages.centralesupelec.fr/01_cluster_overview/
 
 

@@ -55,7 +55,7 @@ function create_and_solve_model(B, B_v, D, A, N, T, T_dict, A_Rt, f_dij)
         -
         sum(y_dijt[ij, T_dict[t]] for ij in keys(A) if split(ij, " => ")[1] == i)
         ==
-        if i == D["d1"]["s_d"] && T_dict[t] == first(T)
+        if i == D["$d"]["s_d"] && T_dict[t] == first(T)
             -1
         elseif i == "E" && T_dict[t] == last(T)
             1

@@ -15,7 +15,7 @@
   Dual objective value : 2.00000e+00
 
 * Work counters
-  Solve time (sec)   : 5.22405e+00
+  Solve time (sec)   : 6.02986e+00
   Simplex iterations : 0
   Barrier iterations : 0
   Node count         : 0
